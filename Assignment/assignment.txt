@@ -1,0 +1,21 @@
+1.Write a function using ES6, which displays following details of an employee.
+name,email,phoneno,address,names of previous project,years of experience,PAN .
+
+NOTE:
+1.The address of the employee should be brillio, if the value for that is not provided. - done
+2.An employee can have zero or more data for names of the previous projects.
+3.Name should contain minimum of 3 characters and maximum of 30 characters. done
+4.Years of experience should not be negative -done
+5.Email contains @ and . also -done
+
+2. Create atleast 2 test cases for each criteria mentioned in Q1.
+Hint: Use Mocha and Chai
+
+3.
+a. Create a HTML file with the following tags
+1 div tag with the text "Hello All" . On clicking the div tag data should get changed to "Good Evening"
+
+b.Create an external JS file with a function which will change the current text of div tag to "Good Evening"
+
+
+NOTE: ZIP your solution and share it to me in Slack.

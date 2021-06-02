@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing sampleComponent with snapshot renders correctly enzyme 1`] = `
+<Fragment>
+  <button>
+    Toggle text
+  </button>
+  <div>
+    Sample Text
+  </div>
+</Fragment>
+`;

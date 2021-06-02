@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+    <h1>Promises</h1>
+    <p id="demo">Hello</p>
+    <script>
+        // function display(some) {
+        //     document.getElementById('demo').innerHTML = some;
+        // }
+        // var myPromise = new Promise(function (myResolve, myReject) {
+        //     let x = 10;
+        //     if (x === 0) {
+        //         myResolve('OK');
+        //     } else myReject('Error');
+        // });
+        // myPromise.then(
+        //     function (value) {
+        //         display(value);
+        //     },
+        //     function (error) {
+        //         display(error);
+        //     }
+        // );
+
+        async function show() {
+            let promiseObj = new Promise(function (myResolve, myReject) {
+                // setTimeout(() => {
+                myResolve('Demo on async');
+                // myReject('shows erros ..!');
+                // document.write(myReject('test'));
+                // }, 2000);
+
+            });
+            document.getElementById('demo').innerHTML = await promiseObj;
+        }
+        show();
+
+        //Async => fun is a fun declared in async keyword 
+        //await will run after completing the promise
+        function resolveAfter2Seconds() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('resolved');
+                }, 2000);
+            });
+        }
+
+        async function asyncCall() {
+            console.log('calling');
+            const result = await resolveAfter2Seconds();
+            console.log(result);
+        }
+        asyncCall();
+
+        // Fetch data from server 
+
+        // let urls = [
+        //     'https://jsonplaceholder.typicode.com/posts/1'
+        // ];
+
+        // // map every url to the promise of the fetch
+        // let requests = urls.map(url => fetch(url));
+
+        // // Promise.all waits until all jobs are resolved
+        // Promise.all(requests)
+        //     .then(responses => responses.forEach(
+        //         response => {
+        //             console.log(`${response.url}: ${response.status}`);
+        //         }
+        //     ));
+
+
+        // new Promise(function (resolve, reject) {
+        //     setTimeout(() => {
+        //         throw new Error("Whoops!");
+        //     }, 1000);
+        // }).catch(alert);
+
+        // let testPromise = new Promise('https://jsonplaceholder.typicode.com/posts').then(response => {
+        //     console.log(response);
+        // }).catch(error => {
+        //     console.log(error);
+        // });
+    </script>
+</body>
+
+</html>

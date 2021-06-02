@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="size10">Size 10</p>
+    <p id="size15">Size 15</p>
+</body>
+<script>
+    function changeSize(size) {
+        return function () {
+            document.body.style.fontSize = size + 'px';
+            this.style.fontSize = size + 'px';
+            console.log(size);
+            (size === 10 ? this.style.backgroundColor = 'red' : this.style.backgroundColor =
+                'blue')
+        };
+    }
+    var size10 = changeSize(10);
+    var size15 = changeSize(15);
+
+    document.getElementById('size10').onclick = size10;
+    document.getElementById('size15').onclick = size15;
+</script>
+
+</html>
